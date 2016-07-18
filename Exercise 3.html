@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>JavaScript Tempurature Converter</title>
+</head>
+
+<body>
+	<h1>Tempurature Conversion</h1>
+	<p>
+		<input type="text" id="tempurature" />
+		<button id ="f_to_c">F to C</button>
+		<button id ="c_to_f">C to F</button>
+	</p>
+
+	<!--Computation results will go here -->
+	<p id="result"></p>
+	<script>
+		var report = function(celsius, fahrenheit) {
+			document.getElementById("result").innerHTML = celsius + "\xb0C = " + fahrenheit + "\xb0F";
+		};
+
+		document.getElementById("f_to_c").onclick = function() {
+			var f = document.getElementById("tempurature").value;
+			report((f-32)/1.8, f);
+		};
+
+		document.getElementById("c_to_f").onclick = function() {
+			var c = document.getElementById("tempurature").value;
+			report(c, 1.8 * c + 32);
+		}
+	</script>
+
+</body>
+</html>
