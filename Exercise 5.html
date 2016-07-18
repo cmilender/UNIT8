@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Tip Calculator</title>
+</head>
+
+<body>
+	<h1>Tip Calculator</h1>
+	<p>
+		Cost: <input type="text" id="cost"/><br><br>
+		Tip:  <input type="button" id="5" value="5%"/>
+		<input type="button" id="10" value="10%"/>
+		<input type="button" id="15" value="15%"/>
+		<input type="button" id="20" value="20%"/>
+		<input type="button" id="25" value="25%"/>
+	</p>
+
+	<p id="result"></p>
+
+	<script>
+
+	var five = document.getElementById("5");
+	var ten = document.getElementById("10");
+	var fifteen = document.getElementById("15");
+	var twenty = document.getElementById("20");		
+	var twentyfive = document.getElementById("25");		
+
+	var calculate = function(percent) {
+			var cost = document.getElementById("cost").value;
+			var total = cost + (cost * percent);
+			document.getElementById("result").innerHTML = total;
+	}
+
+	five.onclick = function() {
+		calculate(0.05);
+	};
+
+	ten.onclick = function() {
+		calculate(0.1);
+	};
+
+	fifteen.onclick = function() {
+		calculate(0.15);
+	};
+
+	twenty.onclick = function() {
+		calculate(0.20);
+	};
+
+	twentyfive.onclick = function() {
+		calculate(0.25);
+	};
+
+
+	</script>
+
+</body>
+</html>
